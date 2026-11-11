@@ -1,0 +1,1278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Bespoke wall murals, creative painting and inspiring spaces for nurseries, schools, soft play centres and children's rooms across London.">
+    <meta name="theme-color" content="#fffdf8">
+    <title>WonderWalls Studio | Bespoke Murals & Creative Spaces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #182b52;
+            --blue: #4b8dbb;
+            --yellow: #ffc83d;
+            --ink: #19294a;
+            --muted: #66738a;
+            --paper: #fffdf9;
+            --line: #e9edf3;
+            --pale: #f2f6fc;
+            --radius: 22px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "DM Sans", sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit
+        }
+
+        .container {
+            width: min(1200px, calc(100% - 42px));
+            margin: auto
+        }
+
+        header {
+            height: 78px;
+            position: absolute;
+            z-index: 20;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 253, 249, .94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid #fff8
+        }
+
+        .nav {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font: 900 22px Nunito, sans-serif;
+            letter-spacing: -1px;
+            white-space: nowrap
+        }
+
+        .logo-mark {
+            width: 43px;
+            height: 43px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: linear-gradient(135deg, #ff595e, #ffc83d 55%, #57b889);
+            color: white;
+            font-size: 25px;
+            transform: rotate(-4deg)
+        }
+
+        .logo small {
+            display: block;
+            font: 700 9px "DM Sans";
+            letter-spacing: .02em;
+            color: #59677f;
+            margin-top: -3px
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 12px;
+            font-weight: 700
+        }
+
+        .links a:hover {
+            color: #3d87ba
+        }
+
+        .pill {
+            border: 0;
+            border-radius: 100px;
+            padding: 13px 20px;
+            background: var(--yellow);
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px #f6c84930;
+            transition: .25s
+        }
+
+        .pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px #f6c84955
+        }
+
+        .hamb {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 25px;
+            color: var(--navy)
+        }
+
+        .hero {
+            height: 590px;
+            min-height: 590px;
+            position: relative;
+            overflow: hidden;
+            padding-top: 78px;
+            background: #e8f0ec
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center 48%;
+            transition: opacity .8s
+        }
+
+        .hero-bg:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(255, 253, 248, .97) 0%, rgba(255, 253, 248, .90) 28%, rgba(255, 253, 248, .22) 57%, rgba(255, 253, 248, .03) 100%)
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center
+        }
+
+        .hero-copy {
+            width: 48%;
+            padding: 30px 0 18px
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: .18em;
+            color: #d99b00;
+            text-transform: uppercase
+        }
+
+        .hero h1 {
+            font: 900 clamp(44px, 5.5vw, 70px)/.99 Nunito, sans-serif;
+            letter-spacing: -.055em;
+            color: var(--navy);
+            margin: 17px 0 20px
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: #4b8dbb;
+            display: block
+        }
+
+        .hero p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #3e4d68;
+            max-width: 440px;
+            margin: 0 0 26px
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .btn-outline {
+            background: #fff;
+            border: 1px solid #9eafc9;
+            color: var(--navy);
+            box-shadow: none
+        }
+
+        .slider-arrows {
+            position: absolute;
+            z-index: 4;
+            left: 18px;
+            right: 18px;
+            top: 50%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none
+        }
+
+        .slider-arrows button {
+            pointer-events: auto;
+            border: 0;
+            background: #fff;
+            color: var(--navy);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 21px;
+            box-shadow: 0 5px 18px #1d31541a;
+            cursor: pointer
+        }
+
+        .dots {
+            position: absolute;
+            z-index: 4;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 9px
+        }
+
+        .dots button {
+            border: 0;
+            width: 9px;
+            height: 9px;
+            border-radius: 20px;
+            background: #ffffffbd;
+            padding: 0;
+            cursor: pointer
+        }
+
+        .dots button.active {
+            width: 27px;
+            background: var(--yellow)
+        }
+
+        .wave {
+            height: 24px;
+            background: var(--paper);
+            border-radius: 50% 50% 0 0;
+            margin-top: -1px;
+            position: relative;
+            z-index: 3
+        }
+
+        .services {
+            padding: 20px 0 54px
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 27px
+        }
+
+        .section-title .eyebrow {
+            font-size: 10px
+        }
+
+        .section-title h2 {
+            font: 900 clamp(27px, 3.4vw, 38px)/1.1 Nunito;
+            margin: 8px 0 0;
+            letter-spacing: -.04em;
+            color: var(--navy)
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px
+        }
+
+        .service {
+            background: #fff;
+            border: 1px solid #edf0f5;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 16px #1c31500c;
+            transition: .25s
+        }
+
+        .service:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px #1c315018
+        }
+
+        .service img {
+            width: 100%;
+            height: 125px;
+            object-fit: cover;
+            display: block
+        }
+
+        .service-body {
+            text-align: center;
+            padding: 13px 12px 17px
+        }
+
+        .service h3 {
+            font: 900 15px/1.18 Nunito;
+            margin: 0 0 7px;
+            color: var(--navy)
+        }
+
+        .service p {
+            font-size: 11px;
+            line-height: 1.5;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .portfolio {
+            padding: 55px 0 70px;
+            background: #f7f9fc
+        }
+
+        .heading-row {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 25px
+        }
+
+        .heading-row h2 {
+            font: 900 37px Nunito;
+            letter-spacing: -.04em;
+            margin: 6px 0 0
+        }
+
+        .heading-row p {
+            margin: 4px 0 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .outline-link {
+            border: 1px solid #aab8cf;
+            padding: 11px 17px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 800;
+            white-space: nowrap
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px
+        }
+
+        .gallery figure {
+            margin: 0;
+            height: 205px;
+            border-radius: 17px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 7px 20px #20345a13
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s
+        }
+
+        .gallery figure:hover img {
+            transform: scale(1.07)
+        }
+
+        .gallery figcaption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 28px 14px 12px;
+            color: #fff;
+            font: 800 13px Nunito;
+            background: linear-gradient(transparent, #15274dcc)
+        }
+
+        .about {
+            padding: 80px 0
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center
+        }
+
+        .about-art {
+            position: relative
+        }
+
+        .about-art img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 24px;
+            display: block
+        }
+
+        .sticker {
+            position: absolute;
+            right: -17px;
+            bottom: 20px;
+            background: var(--yellow);
+            border-radius: 50%;
+            width: 110px;
+            height: 110px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            font: 900 13px/1.15 Nunito;
+            transform: rotate(8deg);
+            box-shadow: 0 10px 25px #182b5220
+        }
+
+        .about h2 {
+            font: 900 clamp(33px, 4vw, 46px)/1.04 Nunito;
+            letter-spacing: -.05em;
+            margin: 10px 0 15px
+        }
+
+        .about-copy {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #5b6880
+        }
+
+        .checks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 13px 15px;
+            margin: 23px 0 27px
+        }
+
+        .checks span {
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .checks i {
+            font-style: normal;
+            background: #e5f3e7;
+            color: #3b9b5d;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: grid;
+            place-items: center;
+            font-size: 12px
+        }
+
+        .process {
+            background: #fff;
+            padding: 58px 0 70px
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px
+        }
+
+        .process-card {
+            text-align: center;
+            padding: 10px 16px
+        }
+
+        .process-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin: 0 auto 13px;
+            display: grid;
+            place-items: center;
+            font-size: 27px;
+            background: #e8f3ff
+        }
+
+        .process-card:nth-child(2) .process-icon {
+            background: #fff3c9
+        }
+
+        .process-card:nth-child(3) .process-icon {
+            background: #e8e5ff
+        }
+
+        .process-card:nth-child(4) .process-icon {
+            background: #fff0e9
+        }
+
+        .process-card h3 {
+            font: 900 15px Nunito;
+            margin: 0 0 6px
+        }
+
+        .process-card p {
+            font-size: 11px;
+            line-height: 1.55;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .testimonial {
+            padding: 40px 0 65px
+        }
+
+        .testimonial-box {
+            border-radius: 22px;
+            background: var(--navy);
+            color: white;
+            padding: 28px 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center
+        }
+
+        .quote {
+            font: 800 19px/1.45 Nunito
+        }
+
+        .quote small {
+            display: block;
+            font: 500 11px "DM Sans";
+            color: #c6d2e7;
+            margin-top: 11px
+        }
+
+        .cta-panel h2 {
+            font: 900 25px Nunito;
+            margin: 0 0 5px
+        }
+
+        .cta-panel p {
+            font-size: 12px;
+            color: #d6deed;
+            margin: 0 0 15px
+        }
+
+        footer {
+            background: #f6f7fa;
+            border-top: 1px solid #e8ebf1;
+            padding: 28px 0 20px
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            font-size: 11px;
+            font-weight: 700;
+            color: #586780
+        }
+
+        .social {
+            display: flex;
+            gap: 9px
+        }
+
+        .social a {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #e8edf5;
+            display: grid;
+            place-items: center;
+            font-size: 11px;
+            font-weight: 900
+        }
+
+        .copyright {
+            border-top: 1px solid #e5e9f0;
+            margin-top: 20px;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            color: #7c8799;
+            font-size: 10px
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: .65s
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: none
+        }
+
+        @media(max-width:900px) {
+            .links {
+                gap: 13px
+            }
+
+            .links a {
+                font-size: 11px
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .hero-copy {
+                width: 56%
+            }
+
+            .about-grid {
+                gap: 35px
+            }
+
+            .gallery figure {
+                height: 175px
+            }
+        }
+
+        @media(max-width:650px) {
+
+            header,
+            .nav {
+                height: 68px
+            }
+
+            .links {
+                display: none
+            }
+
+            .hamb {
+                display: block
+            }
+
+            .nav .pill {
+                padding: 10px 13px
+            }
+
+            .logo {
+                font-size: 19px
+            }
+
+            .hero {
+                height: 650px;
+                min-height: 650px;
+                padding-top: 68px
+            }
+
+            .hero-bg {
+                background-position: 60% center
+            }
+
+            .hero-bg:after {
+                background: linear-gradient(90deg, rgba(255, 253, 248, .97), rgba(255, 253, 248, .83) 55%, rgba(255, 253, 248, .18))
+            }
+
+            .hero-copy {
+                width: 90%
+            }
+
+            .hero h1 {
+                font-size: 49px
+            }
+
+            .hero p {
+                font-size: 13px;
+                max-width: 330px
+            }
+
+            .slider-arrows {
+                left: 8px;
+                right: 8px
+            }
+
+            .slider-arrows button {
+                width: 33px;
+                height: 33px
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px
+            }
+
+            .service img {
+                height: 110px
+            }
+
+            .service h3 {
+                font-size: 13px
+            }
+
+            .heading-row {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .heading-row h2 {
+                font-size: 32px
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 9px
+            }
+
+            .gallery figure {
+                height: 145px
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr
+            }
+
+            .about-art img {
+                height: 300px
+            }
+
+            .sticker {
+                width: 90px;
+                height: 90px;
+                right: 5px
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px
+            }
+
+            .testimonial-box {
+                grid-template-columns: 1fr;
+                padding: 24px
+            }
+
+            .footer-top {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .copyright {
+                gap: 10px;
+                flex-direction: column
+            }
+
+            .container {
+                width: calc(100% - 30px)
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                scroll-behavior: auto !important;
+                transition: none !important
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .fade-slider {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.fade-slider .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.fade-slider .slide.active {
+    opacity: 1;
+}
+
+.slide-label {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    z-index: 2;
+}
+
+@media (max-width: 600px) {
+    .fade-slider {
+        height: 230px;
+    }
+}
+
+.before-after-slider {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 18px;
+    --position: 50%;
+}
+
+.before-image,
+.after-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+}
+
+.after-image-wrapper {
+    position: absolute;
+    inset: 0;
+    width: var(--position);
+    overflow: hidden;
+    z-index: 2;
+}
+
+.after-image {
+    width: 100%;
+    max-width: none;
+}
+
+.comparison-range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 5;
+}
+
+.comparison-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--position);
+    width: 3px;
+    background: white;
+    transform: translateX(-50%);
+    z-index: 4;
+    pointer-events: none;
+}
+
+.comparison-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: white;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+
+.comparison-label {
+    position: absolute;
+    bottom: 16px;
+    padding: 7px 14px;
+    background: rgba(0,0,0,.65);
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.before-label {
+    left: 15px;
+}
+
+.after-label {
+    right: 15px;
+}
+
+@media (max-width: 600px) {
+    .before-after-slider {
+        height: 300px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a class="logo" href="#home"><img src="/Logo.png" alt="WonderWalls Studio"
+                    style="width:48px;height:48px;object-fit:contain;"><span>WonderWalls Studio<small>Bespoke Murals
+                        &amp; Creative Spaces</small></span></a>
+            <nav class="links"><a href="#home">Home</a><a href="#services">Our Services⌄</a><a
+                    href="#portfolio">Portfolio</a><a href="#about">About Us</a><a href="#process">Our Process</a><a
+                    href="#contact">Contact</a></nav>
+            <a class="pill" href="#contact">✆ &nbsp; Get a Free Quote</a><button class="hamb" aria-label="Open menu"
+                onclick="document.querySelector('.links').classList.toggle('mobile-open')">☰</button>
+        </div>
+    </header>
+    <main id="home">
+        <section class="hero">
+            <div class="hero-bg" id="heroBg"
+                style="background-image:url('/slider/20170409_163149.jpeg')">
+            </div>
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <div class="eyebrow">DESIGN • PAINT • TRANSFORM</div>
+                    <h1>We don't just<br>paint walls.<em>We create inspiring spaces for little minds.</em></h1>
+                    <p>Stunning wall murals, vibrant designs and professional painting for nurseries, schools and
+                        children's spaces across London.</p>
+                    <div class="actions"><a class="pill" href="#contact">Explore Our Work&nbsp; →</a><a
+                            class="pill btn-outline" href="#portfolio">View Our Portfolio&nbsp; ↗</a></div>
+                </div>
+            </div>
+            <div class="slider-arrows"><button id="prev" aria-label="Previous slide">‹</button><button id="next"
+                    aria-label="Next slide">›</button></div>
+            <div class="dots"><button class="active" aria-label="Slide 1"></button><button
+                    aria-label="Slide 2"></button><button aria-label="Slide 3"></button></div>
+        </section>
+        <div class="wave"></div>
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <div class="eyebrow">OUR SERVICES</div>
+                    <h2>Tailored Solutions for Every Children's Space</h2>
+                </div>
+                <div class="service-grid">
+                    <article class="service reveal"><img src="/assets/20160704_070728_HDR_Original.jpeg"
+                            alt="Nursery mural inspiration">
+                        <div class="service-body">
+                            <h3>Nurseries &amp; Daycare Centres</h3>
+                            <p>Creative and welcoming environments</p>
+                        </div>
+                    </article>
+                    <article class="service reveal"><img src="/assets/20160605_122452.jpeg"
+                            alt="School mural inspiration">
+                        <div class="service-body">
+                            <h3>Schools &amp; Primary Schools</h3>
+                            <p>Inspiring spaces for learning and growth</p>
+                        </div>
+                    </article>
+                    <article class="service reveal"><img src="/assets/20160201_100935_Original.jpeg"
+                            alt="Soft play centre inspiration">
+                        <div class="service-body">
+                            <h3>Soft Play Centres</h3>
+                            <p>Fun, safe and imaginative designs</p>
+                        </div>
+                    </article>
+                    <article class="service reveal"><img src="/assets/20160201_145802.jpg"
+                            alt="Children's bedroom inspiration">
+                        <div class="service-body">
+                            <h3>Children's Bedrooms &amp; Playrooms</h3>
+                            <p>Dream spaces for happy children</p>
+                        </div>
+                    </article>
+                    <article class="service reveal"><img src="/assets/20170925_105545.jpeg"
+                            alt="Custom wall mural inspiration">
+                        <div class="service-body">
+                            <h3>Custom 3D Wall Murals</h3>
+                            <p>Bespoke designs to bring your vision to life</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <div class="heading-row">
+                    <div>
+                        <div class="eyebrow">OUR PORTFOLIO</div>
+                        <h2>Our Recent Projects</h2>
+                        <p>Take a look at some of our creative space ideas.</p>
+                    </div><a class="outline-link" href="#contact">Discuss Your Project&nbsp; →</a>
+                </div>
+                <div class="gallery">
+                    <figure class="reveal">
+                        <div class="fade-slider">
+                            <img src="/assets/image-6102e95ef90fd049056c52d46393b79e025688d5fdf9b4fc0c82ab1fd49f26a3-V.jpg" alt="Nursery before transformation" class="slide active">
+
+                            <img src="/assets/20140918_131345.jpg" alt="Nursery after transformation" class="slide">
+
+                            <span class="slide-label">Before</span>
+                        </div>
+                        <figcaption>Nursery Transformations</figcaption>
+                    </figure>
+                     <figure class="reveal">
+                        <div class="fade-slider">
+                            <img src="/beforeafter/20170911_160055.jpg" alt="Nursery before transformation" class="slide active">
+
+                            <img src="/beforeafter/20170925_105545.jpg" alt="Nursery after transformation" class="slide">
+
+                            <span class="slide-label">Before</span>
+                        </div>
+                        <figcaption>Hand-painted murals</figcaption>
+                    </figure> <figure class="reveal">
+                        <div class="fade-slider">
+                            <img src="/" alt="Nursery before transformation" class="slide active">
+
+                            <img src="/" alt="Nursery after transformation" class="slide">
+
+                            <span class="slide-label">Before</span>
+                        </div>
+                        <figcaption>School environments</figcaption>
+                    <!-- </figure> <figure class="reveal">
+                        <div class="fade-slider">
+                            <img src="/" alt="Nursery before transformation" class="slide active">
+
+                            <img src="/" alt="Nursery after transformation" class="slide">
+
+                            <span class="slide-label">Before</span>
+                        </div>
+                        <figcaption>Creative play spaces</figcaption>
+                    </figure> <figure class="reveal">
+                        <div class="fade-slider">
+                            <img src="/" alt="Nursery before transformation" class="slide active">
+
+                            <img src="/" alt="Nursery after transformation" class="slide">
+
+                            <span class="slide-label">Before</span>
+                        </div>
+                        <figcaption>Nursery Transformations</figcaption>
+                    </figure> <figure class="reveal">
+                        <div class="fade-slider">
+                            <img src="/" alt="Nursery before transformation" class="slide active">
+
+                            <img src="/" alt="Nursery after transformation" class="slide">
+
+                            <span class="slide-label">Before</span>
+                        </div>
+                        <figcaption>Nursery Transformations</figcaption>
+                    </figure> <figure class="reveal">
+                        <div class="fade-slider">
+                            <img src="/" alt="Nursery before transformation" class="slide active">
+
+                            <img src="/" alt="Nursery after transformation" class="slide">
+
+                            <span class="slide-label">Before</span>
+                        </div>
+                        <figcaption>Nursery Transformations</figcaption>
+                    </figure> <figure class="reveal">
+                        <div class="fade-slider">
+                            <img src="/" alt="Nursery before transformation" class="slide active">
+
+                            <img src="/" alt="Nursery after transformation" class="slide">
+
+                            <span class="slide-label">Before</span>
+                        </div>
+                        <figcaption>Nursery Transformations</figcaption>
+                    </figure> <figure class="reveal">
+                        <div class="fade-slider">
+                            <img src="/" alt="Nursery before transformation" class="slide active">
+
+                            <img src="/" alt="Nursery after transformation" class="slide">
+
+                            <span class="slide-label">Before</span>
+                        </div> -->
+                        <figcaption>Nursery Transformations</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="container about-grid">
+<div class="about-art reveal">
+    <div class="before-after-slider">
+
+        <!-- Before Image -->
+        <img src="/beforeafter/20170911_160055.jpg"
+             alt="Nursery before design"
+             class="before-image">
+
+        <!-- After Image -->
+        <div class="after-image-wrapper">
+            <img src="/beforeafter/20170925_105545.jpg"
+                 alt="Nursery after design"
+                 class="after-image">
+        </div>
+
+        <span class="comparison-label before-label">BEFORE</span>
+        <span class="comparison-label after-label">AFTER</span>
+
+        <!-- Slider -->
+        <input type="range" min="0" max="100" value="50"
+               class="comparison-range"
+               aria-label="Compare before and after images">
+
+        <div class="comparison-line">
+            <div class="comparison-handle">↔</div>
+        </div>
+
+    </div>
+
+    <div class="sticker">MADE WITH<br>IMAGINATION ✦</div>
+</div>
+                <div class="reveal">
+                    <div class="eyebrow">WHY CHOOSE WonderWalls Studio?</div>
+                    <h2>From concept to completion, we're with you every step of the way.</h2>
+                    <p class="about-copy">We combine creative ideas with practical experience to transform children's
+                        spaces. From the first conversation to the final finish, our focus is on thoughtful design,
+                        careful preparation and quality workmanship.</p>
+                    <div class="checks"><span><i>✓</i> Bespoke Designs</span><span><i>✓</i> Fully
+                            Insured*</span><span><i>✓</i> Quality Workmanship</span><span><i>✓</i> Clear
+                            Communication</span><span><i>✓</i> Reliable Scheduling</span><span><i>✓</i> Free Initial
+                            Visit</span></div>
+                    <a class="pill" href="#contact">About Our Services&nbsp; →</a>
+
+                </div>
+            </div>
+        </section>
+        <section class="process" id="process">
+            <div class="container">
+                <div class="section-title">
+                    <div class="eyebrow">HOW IT WORKS</div>
+                    <h2>Our Simple Process</h2>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card reveal">
+                        <div class="process-icon">💬</div>
+                        <h3>1. Get in Touch</h3>
+                        <p>Tell us about your space and ideas.</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-icon">💡</div>
+                        <h3>2. Free Consultation</h3>
+                        <p>We visit, listen and discuss possibilities.</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-icon">🖌️</div>
+                        <h3>3. Design &amp; Plan</h3>
+                        <p>A considered proposal tailored to you.</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-icon">✓</div>
+                        <h3>4. Professional Execution</h3>
+                        <p>Careful preparation and quality finish.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="testimonial" id="contact">
+            <div class="container">
+                <div class="testimonial-box">
+                    <div class="quote">“Your next inspiring space starts with one conversation.”<small>WonderWalls
+                            Studio · Bespoke Murals &amp; Creative Spaces</small></div>
+                    <div class="cta-panel">
+                        <h2>Ready to transform your space?</h2>
+                        <p>Book a free initial site visit and let's bring your vision to life.</p>
+                        <a class="pill" href="mailto:Hessam_taheri@yahoo.com?subject=Free%20Site%20Visit%20Enquiry">
+                            ▦ &nbsp; Book Your Free Site Visit &nbsp; →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-top"><a class="logo" href="#home"><img src="/Logo.png" alt="WonderWalls Studio"
+                        style="width:48px;height:48px;object-fit:contain;"><span>WonderWalls
+                        Studio<small>Bespoke Murals &amp; Creative Spaces</small></span></a>
+                <nav class="footer-links"><a href="#home">Home</a><a href="#services">Services</a><a
+                        href="#portfolio">Portfolio</a><a href="#about">About Us</a><a href="#process">Our Process</a><a
+                        href="#contact">Contact</a></nav>
+                <div class="social"><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="Facebook">f</a><a
+                        href="#" aria-label="Pinterest">p</a></div>
+            </div>
+            <div class="copyright"><span>© <span id="year"></span> WonderWalls Studio. All rights
+                    reserved.</span><span>Creating happier spaces for brighter futures ♡</span></div>
+        </div>
+    </footer>
+    <script>
+        const heroImages = ['/slider/20170409_163149.jpeg', '/slider/20170414_142556_Original.jpeg', '/slider/20170603_182818_HDR_Original.jpeg', '/slider/20170925_105545.jpeg', '/slider/20170927_082148_Original.jpg', '/slider/20170928_164210_Original.jpeg'];
+        const bg = document.getElementById('heroBg'), dots = [...document.querySelectorAll('.dots button')]; let active = 0, loop;
+        function setSlide(i) { active = (i + heroImages.length) % heroImages.length; bg.style.opacity = '.25'; setTimeout(() => { bg.style.backgroundImage = `url("${heroImages[active]}")`; bg.style.opacity = '1' }, 180); dots.forEach((d, n) => d.classList.toggle('active', n === active)) }
+        function restart() { clearInterval(loop); loop = setInterval(() => setSlide(active + 1), 5200) }
+        document.getElementById('prev').onclick = () => { setSlide(active - 1); restart() }; document.getElementById('next').onclick = () => { setSlide(active + 1); restart() }; dots.forEach((d, i) => d.onclick = () => { setSlide(i); restart() }); restart();
+        const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target) } }), { threshold: .12 }); document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script>
+document.querySelectorAll('.fade-slider').forEach(slider => {
+    const slides = slider.querySelectorAll('.slide');
+    const label = slider.querySelector('.slide-label');
+    let current = 0;
+
+    setInterval(() => {
+        slides[current].classList.remove('active');
+
+        current = (current + 1) % slides.length;
+
+        slides[current].classList.add('active');
+
+        label.textContent = current === 0 ? 'Before' : 'After';
+    }, 4000);
+});
+</script>
+<script>
+document.querySelectorAll('.before-after-slider').forEach(slider => {
+    const range = slider.querySelector('.comparison-range');
+
+    range.addEventListener('input', () => {
+        slider.style.setProperty('--position', range.value + '%');
+    });
+});
+</script>
+</body>
+
+</html>
